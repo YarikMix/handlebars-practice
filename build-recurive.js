@@ -31,7 +31,6 @@ const hbsFiles = findHbsFiles(srcDir);
 
 // Обрабатываем каждый шаблон
 hbsFiles.forEach((hbsFile) => {
-    console.log("hbsFile", hbsFile)
     // Определяем путь для выходного JS-файла
     const outputFile = path.join(
         buildDir,
