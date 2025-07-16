@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "build": "build.sh",
-    "start": "npm run build && node server/index.js"
+    "build:unix": "sh build.sh",
+    "build:windows": "build.sh",
+    "build": "node build.js",
+    "build:recursive": "node build-recurive.js",
+    "start": "npm run build:recursive && node server/index.js"
   },
   "repository": {
     "type": "git",
