@@ -1,0 +1,24 @@
+{
+  "name": "handlebars-practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YarikMix/handlebars-practice.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YarikMix/handlebars-practice/issues"
+  },
+  "homepage": "https://github.com/YarikMix/handlebars-practice#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "handlebars": "^4.7.8"
+  }
+}
