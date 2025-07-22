@@ -17,20 +17,28 @@ const config = {
         historyApiFallback: true,
     },
     entry: {
-        main :path.resolve(__dirname, 'public', 'index.js')
+        main: path.resolve(__dirname, 'public', 'index.ts')
     },
     module: {
         rules: [
             {
-                test: /\.js$/,
-                use: 'babel-loader',
+                test: /\.m?(js|ts|jsx|tsx)?$/,
                 exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env', '@babel/preset-typescript']
+                    }
+                }
             },
             {
                 test: /\.hbs$/,
                 loader: 'handlebars-loader',
             },
         ],
+    },
+    resolve: {
+        extensions: ['.ts', '.js'],
     },
     plugins: [
         new HtmlWebpackPlugin()
