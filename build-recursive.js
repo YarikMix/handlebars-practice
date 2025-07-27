@@ -34,7 +34,7 @@ hbsFiles.forEach((hbsFile) => {
     // Определяем путь для выходного JS-файла
     const outputFile = path.join(
         buildDir,
-        path.basename(hbsFile).replace('.hbs', '.js')
+        'precompiled.js'
     );
 
     const cmd = `npx handlebars -m ${hbsFile} -f ${outputFile}`;

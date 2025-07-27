@@ -1,19 +1,11 @@
-import "./build/posts.js"; // Подключение скомпилированного в js шаблона posts.hbs
+import "./build/precompiled.js"; // Подключение скомпилированных Handlebars шаблонов
 
-const context = {
-    title: "Собаке Качалова",
-    author: {
-        id: 47,
-        name: "Сергей Есенин"
-    },
-    people: [
-        "Yehuda Katz",
-        "Alan Johnson",
-        "Charles Jolley",
-    ],
-};
+import Home from "./src/pages/home/home.js";
 
-document.body.insertAdjacentHTML(
-    "afterbegin",
-    window.Handlebars.templates["posts.hbs"](context)
-)
+
+const root = document.createElement('div');
+root.id = 'root';
+document.body.appendChild(root);
+
+const home = new Home(root);
+home.render()

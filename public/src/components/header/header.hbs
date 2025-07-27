@@ -1,0 +1,20 @@
+<div class="header">
+    <h1>{{title}}</h1>
+    <div class="menu">
+        {{#each menu}}
+            <a href="{{link}}" id="{{id}}">
+                {{label}}
+            </a>
+        {{/each}}
+
+        {{#if isAuth}}
+            <a href="/settings" id="settings">
+                Настройки
+            </a>
+        {{else}}
+            <a href="/login" id="login">
+                Вход
+            </a>
+        {{/if}}
+    </div>
+</div>

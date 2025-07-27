@@ -7,9 +7,11 @@
   "scripts": {
     "build:unix": "sh build.sh",
     "build:windows": "build.sh",
-    "build:recursive": "node build-recursive.js",
-    "build": "npm run build:recursive",
-    "start": "npm run build && nodemon server/index.js -e html,js,css,hbs --ignore public/build"
+    "compile1": "node build-recursive.js",
+    "compile2": "npx handlebars public/src/components/ -m -f public/build/precompiled.js -e hbs",
+    "compile3": "globstar -- npx handlebars public/src/**/*.hbs -m -f public/build/precompiled.js",
+    "build": "npm run compile3",
+    "start": "npm run build && nodemon server/index.js -e html,js,css,hbs --ignore public/build/"
   },
   "repository": {
     "type": "git",
@@ -24,6 +26,7 @@
   "homepage": "https://github.com/YarikMix/handlebars-practice#readme",
   "dependencies": {
     "express": "^5.1.0",
+    "globstar": "^1.0.0",
     "handlebars": "^4.7.8",
     "reload": "^3.4.1"
   },

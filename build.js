@@ -12,7 +12,7 @@ fs.mkdirSync(buildDir, { recursive: true });
 // Маппинг шаблонов и их выходных файлов
 const templates = [
     { input: 'components/home.hbs', output: 'home.js' },
-    { input: 'components/posts.hbs', output: 'posts.js' },
+    { input: 'components/post.hbs', output: 'posts.js' },
     { input: 'components/settings.hbs', output: 'settings.js' },
 ];
 
