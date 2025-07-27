@@ -5,10 +5,14 @@ export default class Post extends Component {
         super(parent, config, 'post');
     }
 
+    get self() {
+        return document.querySelector(`post-${this.config.id}`);
+    }
+
     render() {
         this.parent.insertAdjacentHTML(
             "afterbegin",
-            this.template(this.config)
+            this.html
         )
     }
 }

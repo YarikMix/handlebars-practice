@@ -8,7 +8,7 @@ export default class Header extends Component {
     render() {
         this.parent.insertAdjacentHTML(
             "afterbegin",
-            this.template(this.config)
+            this.html
         )
     }
 }

@@ -6,18 +6,14 @@ export default class Posts extends Component{
         super(parent, config, 'posts');
     }
 
-    self() {
-        return document.querySelector(".posts-container");
-    }
-
     render() {
         this.parent.insertAdjacentHTML(
             "afterbegin",
-            this.template()
+            this.html
         )
 
-        this.config.forEach(data => {
-            const post = new Post(this.self(), data);
+        this.config.items.forEach(data => {
+            const post = new Post(this.self, data);
             post.render();
         })
     }

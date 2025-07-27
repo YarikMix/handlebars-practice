@@ -8,22 +8,15 @@
 export default class Component {
     constructor(parent, config, templateName) {
         this.parent = parent;
-        this.config = config;
-        this.template = Handlebars.templates[`${templateName}.hbs`];
+        this.config = config
+        this.templateName = templateName;
     }
 
     get self() {
-
+        return document.getElementById(this.config.id);
     }
 
-    /**
-     * Возвращает массив данных для шаблона компонента.
-     * @returns {Array} - Массив объектов с данными для шаблона компонента.
-     */
-    get data() {
-        return Object.entries(this.config).map(([key, configs]) => ({
-            key,
-            ...configs,
-        }));
+    get html() {
+        return Handlebars.templates[`${this.templateName}.hbs`](this.config);
     }
 }
