@@ -25,16 +25,28 @@ const config = {
             id: 1,
             title: "Title1",
             description: "Description1",
+            author: {
+                name: "John Doe",
+                subscribers_count: 11
+            }
         },
         {
             id: 2,
             title: "Title2",
             description: "Description2",
+            author: {
+                name: "Georgia Morrow",
+                subscribers_count: 22
+            }
         },
         {
             id: 3,
             title: "Title3",
             description: "Description3",
+            author: {
+                name: "Herbert Cruz",
+                subscribers_count: 33
+            }
         },
     ]
 }
